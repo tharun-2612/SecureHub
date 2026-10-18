@@ -1,21 +1,21 @@
 # SecureHub
 
-SecureHub is a security-focused full-stack project I created for my software development portfolio and job search. I built it to demonstrate how I approach backend engineering, authentication, authorization, validation, testing, and application security in a practical project recruiters can inspect.
+SecureHub is a security-focused web application that demonstrates practical design and implementation of an authentication API. I developed it to explore how common application security risks can be addressed through clear service boundaries, defensive input handling, explicit authorization, and automated tests.
 
 > **Project status:** The Express API implements the features listed below. The React/Vite frontend is currently the original Vite starter screen; it is not yet connected to the API and is not a usable SecureHub dashboard. This repository is under active development, and later versions will build out the frontend and expand the security workflows.
 
 ## Why SecureHub Exists
 
-Authentication code is easy to get mostly right while missing important boundaries: leaking whether an account exists, storing raw passwords, trusting client-supplied roles, allowing access to another user's record, or accepting MongoDB operators as input. I created SecureHub to make those risks visible, testable, and documented while building experience with a modern JavaScript full-stack toolchain.
+Authentication code can appear to work while missing important security boundaries: revealing whether an account exists, storing raw passwords, trusting client-supplied roles, exposing another user's record, or interpreting MongoDB operators as query conditions. SecureHub makes these risks explicit and demonstrates mitigations that can be reviewed in the implementation and verified by tests.
 
-The project is useful as:
+## Engineering Objectives
 
-- A hands-on example of organizing an Express API into routes, controllers, services, middleware, models, and tests.
-- A reference for practicing safer account flows: bcrypt password hashing, generic login errors, JWT verification, role checks, and IDOR prevention.
-- A foundation for adding a real frontend and further security controls while keeping regressions covered by automated tests.
-- A learning environment for local security review with OWASP ZAP's passive baseline scan.
-
-For recruiters and engineering teams, the backend code and tests show how I structure API features, make authorization decisions, protect sensitive values, and verify expected behavior. The roadmap also shows what I plan to build next; completed and planned work are labeled separately so the project status stays clear.
+- Organize the Express API into routes, controllers, services, middleware, models, and tests.
+- Apply safer account flows with bcrypt password hashing, generic login errors, JWT verification, role-based access, and IDOR prevention.
+- Validate and normalize request data before using it in database queries or authentication logic.
+- Use automated tests to make security expectations repeatable and catch regressions.
+- Provide a foundation for frontend integration and additional security controls.
+- Support local review with OWASP ZAP's passive baseline scan.
 
 SecureHub is an educational project, not a security certification or a guarantee that a deployment is secure. Review the code, configuration, infrastructure, and scan findings before using it with real users or sensitive data.
 
